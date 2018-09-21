@@ -16,17 +16,18 @@ DeclareAttribute( "TopologicalCoframeOnAFiniteSet",
         IsFiniteSet );
 
 #! @Description
-#!  Construct an closed subset (as an object in the coframe of closed subsets
-#!  of a finite topology) from a morphism <A>m</A> in the category <C>FinSets</C>.
+#!  Construct an closed subset (as an object in the coframe
+#!  <A>C</A>=<C>TopologicalCoframeOnAFiniteSet</C>(<C>Range</C>(<A>m</A>))
+#!  of closed subsets of a finite topology) from a morphism <A>m</A> in the category <C>FinSets</C>.
 #!  The morphism <A>m</A> stands for its set-theoretic image.
-#! @Arguments m
+#! @Arguments m, C
 #! @Returns a &CAP; object
 #! @Group ClosedFinSet
 DeclareOperation( "ClosedFinSet",
-        [ IsCapCategoryMorphism ] );
+        [ IsCapCategoryMorphism, IsCapCategory ] );
 
-#! @Arguments images, T
-#! @Group 
+#! @Arguments m
+#! @Group ClosedFinSet
 DeclareOperation( "ClosedFinSet",
-        [ IsList, IsFiniteSet ] );
+        [ IsCapCategoryMorphism ] );
 #! @InsertSystem ClosedFinSet

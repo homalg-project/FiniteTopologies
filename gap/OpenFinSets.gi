@@ -6,17 +6,15 @@
 
 ##
 InstallMethod( OpenFinSet,
-        "for a CAP category morphism",
-        [ IsCapCategoryMorphism ],
+        "for a CAP category morphism and a CAP category",
+        [ IsCapCategoryMorphism, IsCapCategory and IsCartesianClosedCategory ],
 
-  function( m )
-    local A, FF;
+  function( m, frame )
+    local A;
     
     A := rec( );
     
-    FF := TopologicalFrameOnAFiniteSet( Range( m ) );
-    
-    ObjectifyObjectForCAPWithAttributes( A, FF,
+    ObjectifyObjectForCAPWithAttributes( A, frame,
             MonomorphismInUnderlyingCategory, m
             );
     
@@ -27,7 +25,18 @@ InstallMethod( OpenFinSet,
 end );
 
 ##
-InstallMethodWithCrispCache( TopologicalFrameOnAFiniteSet,
+InstallMethod( OpenFinSet,
+        "for a CAP category morphism",
+        [ IsCapCategoryMorphism ],
+
+  function( m )
+    
+    return OpenFinSet( m, TopologicalFrameOnAFiniteSet( Range( m ) ) );
+    
+end );
+
+##
+InstallMethod( TopologicalFrameOnAFiniteSet,
         "for a finite set",
         [ IsFiniteSet ],
         
@@ -48,7 +57,7 @@ InstallMethodWithCrispCache( TopologicalFrameOnAFiniteSet,
     
     ADD_COMMON_METHODS_FOR_HEYTING_ALGEBRAS( TopologicalFrame );
     
-    ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets( TopologicalFrame, OpenFinSet );
+    ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets( TopologicalFrame, m -> OpenFinSet( m, TopologicalFrame ) );
     
     ##
     AddInternalHomOnObjects( TopologicalFrame,

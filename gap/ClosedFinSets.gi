@@ -6,17 +6,15 @@
 
 ##
 InstallMethod( ClosedFinSet,
-        "for a CAP category morphism",
-        [ IsCapCategoryMorphism ],
+        "for a CAP category morphism and a CAP category",
+        [ IsCapCategoryMorphism, IsCapCategory and IsCoCartesianCoclosedCategory ],
 
-  function( m )
-    local A, FF;
+  function( m, coframe )
+    local A;
     
     A := rec( );
     
-    FF := TopologicalCoframeOnAFiniteSet( Range( m ) );
-    
-    ObjectifyObjectForCAPWithAttributes( A, FF,
+    ObjectifyObjectForCAPWithAttributes( A, coframe,
             MonomorphismInUnderlyingCategory, m
             );
     
@@ -27,7 +25,18 @@ InstallMethod( ClosedFinSet,
 end );
 
 ##
-InstallMethodWithCrispCache( TopologicalCoframeOnAFiniteSet,
+InstallMethod( ClosedFinSet,
+        "for a CAP category morphism",
+        [ IsCapCategoryMorphism ],
+
+  function( m )
+    
+    return ClosedFinSet( m, TopologicalCoframeOnAFiniteSet( Range( m ) ) );
+    
+end );
+
+##
+InstallMethod( TopologicalCoframeOnAFiniteSet,
         "for a finite set",
         [ IsFiniteSet ],
         
@@ -48,7 +57,7 @@ InstallMethodWithCrispCache( TopologicalCoframeOnAFiniteSet,
     
     ADD_COMMON_METHODS_FOR_COHEYTING_ALGEBRAS( TopologicalCoframe );
     
-    ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets( TopologicalCoframe, ClosedFinSet );
+    ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets( TopologicalCoframe, m -> ClosedFinSet( m, TopologicalCoframe ) );
     
     ##
     AddInternalHomOnObjects( TopologicalCoframe,
