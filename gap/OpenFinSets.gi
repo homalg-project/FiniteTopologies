@@ -48,7 +48,7 @@ InstallMethodWithCrispCache( TopologicalFrameOnAFiniteSet,
     
     ADD_COMMON_METHODS_FOR_HEYTING_ALGEBRAS( TopologicalFrame );
     
-    ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets( TopologicalFrame );
+    ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets( TopologicalFrame, OpenFinSet );
     
     ##
     AddInternalHomOnObjects( TopologicalFrame,

@@ -11,7 +11,7 @@ SetPackageInfo( rec(
 PackageName := "FiniteTopologies",
 Subtitle := "Finite topologies as locales",
 Version := Maximum( [
-                   "2018.09.04", ## Mohamed's version
+                   "2018.09.05", ## Mohamed's version
                    ## this line prevents merge conflicts
                    "2018.09.03", ## Tom's version
                    ] ),

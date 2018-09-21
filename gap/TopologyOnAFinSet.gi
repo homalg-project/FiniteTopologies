@@ -6,7 +6,7 @@
 
 ##
 InstallGlobalFunction( ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets,
-  function( finite_topological_frame_or_coframe )
+  function( finite_topological_frame_or_coframe, object_constructor )
     
     ##
     AddIsWellDefinedForObjects( finite_topological_frame_or_coframe,
