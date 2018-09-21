@@ -46,7 +46,7 @@ InstallMethodWithCrispCache( TopologicalCoframeOnAFiniteSet,
     
     AddMorphismRepresentation( TopologicalCoframe, IsMorphismInFiniteTopologicalCoframe );
     
-    ADD_COMMON_METHODS_FOR_HEYTING_ALGEBRAS( TopologicalCoframe );
+    ADD_COMMON_METHODS_FOR_COHEYTING_ALGEBRAS( TopologicalCoframe );
     
     ADD_COMMON_METHODS_FOR_FRAMES_AND_COFRAMES_DEFINED_USING_FinSets( TopologicalCoframe, ClosedFinSet );
     
