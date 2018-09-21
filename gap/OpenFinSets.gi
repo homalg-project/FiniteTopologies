@@ -27,7 +27,7 @@ InstallMethod( OpenFinSet,
 end );
 
 ##
-InstallMethod( TopologicalFrameOnAFiniteSet,
+InstallMethodWithCrispCache( TopologicalFrameOnAFiniteSet,
         "for a finite set",
         [ IsFiniteSet ],
         

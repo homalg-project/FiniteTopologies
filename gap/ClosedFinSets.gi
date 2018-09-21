@@ -27,7 +27,7 @@ InstallMethod( ClosedFinSet,
 end );
 
 ##
-InstallMethod( TopologicalCoframeOnAFiniteSet,
+InstallMethodWithCrispCache( TopologicalCoframeOnAFiniteSet,
         "for a finite set",
         [ IsFiniteSet ],
         
