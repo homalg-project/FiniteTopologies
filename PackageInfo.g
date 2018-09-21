@@ -11,7 +11,7 @@ SetPackageInfo( rec(
 PackageName := "FiniteTopologies",
 Subtitle := "Finite topologies as locales",
 Version := Maximum( [
-                   "2018.09.06", ## Mohamed's version
+                   "2018.09.18", ## Mohamed's version
                    ## this line prevents merge conflicts
                    "2018.09.03", ## Tom's version
                    ] ),
@@ -91,7 +91,7 @@ Dependencies := rec(
   NeededOtherPackages := [
                    [ "GAPDoc", ">= 1.5" ],
                    [ "FinSetsForCAP", ">= 2018.09.17" ],
-                   [ "CAP", ">= 2018.09.17" ],
+                   [ "CAP", ">= 2018.09.18" ],
                    [ "Locales", ">= 2018.09.17" ],
                    ],
   SuggestedOtherPackages := [ ],
