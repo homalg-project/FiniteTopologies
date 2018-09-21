@@ -61,14 +61,3 @@ InstallMethod( TopologicalFrameOnAFiniteSet,
     return TopologicalFrame;
     
 end );
-
-##
-InstallMethod( Display,
-        "for an object in a Zariski frame",
-        [ IsObjectInFiniteTopologicalFrame ],
-
-  function( A )
-    
-    Display( ImageObject( MonomorphismInUnderlyingCategory( A ) ) );
-    
-end );

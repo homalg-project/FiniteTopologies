@@ -61,14 +61,3 @@ InstallMethod( TopologicalCoframeOnAFiniteSet,
     return TopologicalCoframe;
     
 end );
-
-##
-InstallMethod( Display,
-        "for an object in a Zariski frame",
-        [ IsObjectInFiniteTopologicalCoframe ],
-
-  function( A )
-    
-    Display( ImageObject( MonomorphismInUnderlyingCategory( A ) ) );
-    
-end );
