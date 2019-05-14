@@ -30,4 +30,4 @@ DeclareOperation( "ClosedFinSet",
 #! @Group ClosedFinSet
 DeclareOperation( "ClosedFinSet",
         [ IsCapCategoryMorphism ] );
-#! @InsertSystem ClosedFinSet
+#! @InsertChunk ClosedFinSet

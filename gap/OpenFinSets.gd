@@ -30,4 +30,4 @@ DeclareOperation( "OpenFinSet",
 #! @Group OpenFinSet
 DeclareOperation( "OpenFinSet",
         [ IsCapCategoryMorphism ] );
-#! @InsertSystem OpenFinSet
+#! @InsertChunk OpenFinSet
