@@ -1,4 +1,4 @@
-#! @System ClosedFinSet
+#! @Chunk ClosedFinSet
 
 LoadPackage( "FiniteTopologies" );
 
